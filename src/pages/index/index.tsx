@@ -1,9 +1,13 @@
 import { Component } from 'react'
-import { View, Text } from '@tarojs/components'
+import { View, Text, WebView } from '@tarojs/components'
+import { AtButton } from 'taro-ui'
+
 import './index.less'
 
-export default class Index extends Component {
+interface MyProps {}
+interface MyState {}
 
+export default class Index extends Component<MyProps, MyState> {
   componentWillMount () { }
 
   componentDidMount () { }
@@ -14,11 +18,17 @@ export default class Index extends Component {
 
   componentDidHide () { }
 
+  handleMessage() {
+
+  }
+
   render () {
     return (
       <View className='index'>
-        <Text>Hello world!</Text>
+        <WebView src='https://yeyaolong.github.io/' onMessage={this.handleMessage}></WebView>
       </View>
     )
   }
+
+
 }
